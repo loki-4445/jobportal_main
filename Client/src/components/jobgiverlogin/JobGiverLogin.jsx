@@ -60,6 +60,7 @@ const JobGiverLogin = ({ setIsLoggedIn }) => {
         sessionStorage.setItem("token", data.token);
         sessionStorage.setItem("recruiter", JSON.stringify(data.recruiter));
         sessionStorage.setItem("userType", "jobGiver");
+        sessionStorage.setItem("isLoggedIn", "true");
 
         setIsLoggedIn(true);
         navigate("/postedjob");

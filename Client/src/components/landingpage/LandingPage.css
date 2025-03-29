@@ -1,0 +1,61 @@
+.landing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.landing-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  max-width: 1000px;
+}
+
+.landing-image img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.landing-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  width: 400px;
+}
+
+.landing-btn {
+  padding: 15px 20px;
+  font-size: 16px;
+  background-color: #ecb55a;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.landing-btn:hover {
+  background-color: #d89d41;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 756px) {
+  .landing-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .landing-image {
+      display: none;
+  }
+
+  .landing-buttons {
+      width: 100%;
+  }
+}

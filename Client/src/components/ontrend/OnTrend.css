@@ -1,0 +1,99 @@
+/* OnTrend.css */
+.ontrend-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    
+  }
+  
+  .ontrend-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d97706; /* Soft yellow */
+  }
+  
+  .ontrend-subtitle {
+    color: #6b7280; /* Soft gray */
+    margin-bottom: 20px;
+  }
+  
+  .ontrend-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .job-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    
+    display: flex; /* Make all job cards flexible */
+    flex-direction: column; /* Stack elements vertically */
+    height: 100%; /* Ensure all job cards have equal height */
+  }
+  
+  .job-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .job-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .job-title {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .job-description {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 10px 0;
+    flex-grow: 1; /* Allows the description to take available space */
+  }
+  
+  .apply-button {
+    width: 100%;
+    background: #f59e0b;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    
+    margin-top: auto; /* Pushes the button to the bottom */
+  }
+  
+  .apply-button:hover {
+    background: #d97706;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .ontrend-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .ontrend-title {
+      font-size: 1.5rem;
+    }
+    .ontrend-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  body {
+    background-color: #ffffff !important; /* Set full page background to white */
+  }
+  

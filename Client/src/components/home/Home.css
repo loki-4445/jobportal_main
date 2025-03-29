@@ -1,0 +1,293 @@
+body {
+  background-color: #1f2937;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.relative {
+  position: relative;
+}
+
+.background-image {
+  width: 100%;
+  height: 700px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+  color: white;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: #f97316;
+}
+
+.subtitle {
+  margin-bottom: 20px;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 10px;
+  max-width: 700px;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input,
+.search-bar select {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+  margin-right: 10px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 14px;
+}
+
+.search-bar input::placeholder {
+  color: #aaa;
+}
+
+.search-bar button {
+  background-color: #f97316; /* Orange button */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #e56b14; /* Slightly darker orange on hover */
+}
+
+/* Stats Section (Bottom Boxes) */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stats .stat {
+  background-color: #ffffff;
+  color: #333;
+  padding: 30px 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats .stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stats .stat h2 {
+  font-size: 28px;
+  color: #f97316; /* Orange accent */
+  margin-bottom: 10px;
+}
+
+.stats .stat p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Testimonial Images */
+.testimonial-images {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.testimonial-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Quote Badge */
+.quote-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f89c1c;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.quote-icon {
+  font-size: 20px;
+}
+
+/* Testimonial Content */
+.testimonial-content {
+  width: 50%;
+  text-align: left;
+}
+
+.testimonial-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.testimonial-text {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Author Info */
+.author-info {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.author-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.author-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+}
+
+.author-role {
+  font-size: 14px;
+  color: #f89c1c;
+}
+
+/* Success & Award Section */
+.success-award-section {
+  text-align: center;
+  background: #f9f9f9;
+  padding: 50px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.success-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.success-title span {
+  color: #ffa500; /* Highlighted text */
+}
+
+.success-description {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Award Button */
+.award-btn {
+  background: #ffa500;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+}
+
+.award-btn:hover {
+  background: #ff8c00;
+}
+
+/* Statistics Section */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 150px;
+}
+
+.stat-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.stat-box h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-box p {
+  font-size: 14px;
+  color: #666;
+}

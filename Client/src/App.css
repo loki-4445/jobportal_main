@@ -1,0 +1,210 @@
+/* ========== Global Reset and Base Styles ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* ========== Root Variables for Consistent Styling ========== */
+:root {
+  --primary-color: #646cff;
+  --secondary-color: #61dafb;
+  --text-color: #333;
+  --bg-color: #f4f4f4;
+  --link-color: #007bff;
+  --link-hover-color: #0056b3;
+  --spacing: 1.5rem;
+}
+
+/* ========== Logo Styling ========== */
+.logo {
+  height: 6em;
+  padding: var(--spacing);
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em var(--primary-color));
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em var(--secondary-color));
+}
+
+/* ========== Animation ========== */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* ========== Cards and Containers ========== */
+.card {
+  padding: 2em;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* ========== Buttons ========== */
+button {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: var(--link-hover-color);
+}
+
+/* ========== Navigation Links ========== */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+/* ========== Global Layout Adjustments ========== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ========== Footer Styling ========== */
+footer {
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* ========== Responsive Design ========== */
+
+/* 📱 Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .logo {
+    height: 4em;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 1em;
+  }
+
+  button {
+    padding: 8px 15px;
+  }
+
+  footer {
+    padding: 0.5rem 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .auth-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* 📱 Tablets (601px to 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  .logo {
+    height: 5em;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .card {
+    padding: 1.5em;
+  }
+
+  .auth-section {
+    gap: 15px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+}
+
+/* 💻 Desktops (1025px and up) */
+@media (min-width: 1025px) {
+  body {
+    font-size: 18px;
+  }
+
+  .logo {
+    height: 6em;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 2em;
+  }
+
+  .auth-section {
+    gap: 20px;
+  }
+
+  .nav-links {
+    gap: 25px;
+  }
+}

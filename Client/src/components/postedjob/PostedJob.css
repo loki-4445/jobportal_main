@@ -1,0 +1,32 @@
+.posted-jobs-container {
+  max-width: 500px;  /* Decreased width */
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.job-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;  /* Decreased width */
+}
+
+.job-card.compact {
+  font-size: 14px;
+}
+
+.no-jobs {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}

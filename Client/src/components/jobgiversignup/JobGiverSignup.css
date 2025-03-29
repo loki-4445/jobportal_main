@@ -1,0 +1,176 @@
+/* General Styles */
+/* Reduce the height of the navbar */
+.navbar {
+  height: 70px; /* Adjust the height to make it smaller */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;  /* Adjust padding to reduce space */
+  background-color: #fff; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  padding-bottom: 100px; /* Add bottom padding to prevent button cutoff */
+}
+
+/* Image Styling */
+.signup-container img {
+  width: 250px; /* Adjust the size as needed */
+  margin-right: 40px;
+}
+
+/* Signup Box */
+.signup-box {
+  background: none; /* Removes background color */
+  padding: 40px;
+  width: 400px;
+  text-align: left; /* Align text to the left */
+  border-radius: 0px; /* Removes rounded borders */
+  box-shadow: none; /* Removes shadow */
+}
+
+/* Heading Styling */
+.signup-box h2 {
+  font-size: 28px; /* Bigger heading */
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center; /* Keeps heading centered */
+  color: #333; /* Dark text */
+}
+
+/* Input Fields */
+.signup-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+.signup-box input:focus {
+  border-color: #e8ab5d; /* Highlight on focus */
+  outline: none;
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Error messages */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+/* Signup Button */
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #e8ab5d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 10px;
+  display: block; 
+}
+
+.signup-btn:hover {
+  background-color: #d99e00;
+}
+
+/* Upload Container */
+.upload-container {
+  text-align: center;
+}
+
+/* Upload Input */
+.upload-input {
+  display: none; /* Hide the actual file input */
+}
+
+.upload-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  background-color: #fef3e6; /* Light background */
+  color: #e8ab5d; /* Orange text */
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #e8ab5d;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-btn:hover {
+  background-color: #e8ab5d;
+  color: white;
+}
+
+/* Login Button */
+.login-btn {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #e8ab5d;
+  padding: 11px 19px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #e8ab5d;
+  color: white;
+}
+
+/* Footer Styling - Fixed position */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff9800; /* Footer color */
+  padding: 10px 0;
+  text-align: center;
+  z-index: 10;
+}
+
+/* Ensure content is scrollable */
+body {
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 120px; /* More space for small screens */
+  }
+
+  .signup-container img {
+    margin: 0 auto 20px;
+  }
+
+  .signup-box {
+    width: 90%;
+  }
+}

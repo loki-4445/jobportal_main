@@ -1,0 +1,117 @@
+/* Container with background image */
+.add-job-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px; /* Reduced padding */
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+}
+
+/* Content box with white background */
+.add-job-content {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 30px; /* Reduced padding */
+  max-width: 550px; /* Slightly reduced width */
+  width: 90%; /* Responsive width */
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Title Styling */
+.add-job-title {
+  text-align: center;
+  font-size: 26px; /* Slightly reduced size */
+  color: #e74c3c;
+  margin-bottom: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Form Styling */
+.add-job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Reduced gap */
+}
+
+.add-job-form input,
+.add-job-form textarea,
+.add-job-form select {
+  width: 100%;
+  padding: 10px 12px; /* Adjusted padding */
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Slightly reduced */
+  transition: 0.3s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-job-form input:focus,
+.add-job-form textarea:focus,
+.add-job-form select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 3px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Button Styling */
+.post-job-button {
+  width: 100%;
+  background-color: #f39c12;
+  color: white;
+  padding: 12px;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.post-job-button:hover {
+  background-color: #e67e22;
+  transform: translateY(-1px); /* Reduced effect */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌟 RESPONSIVE DESIGN */
+
+/* Medium screens (md) */
+@media (max-width: 768px) {
+  .add-job-content {
+    padding: 25px;
+    max-width: 90%;
+  }
+}
+
+/* Small screens (sm & xs) */
+@media (max-width: 480px) {
+  .add-job-content {
+    padding: 20px;
+  }
+
+  .add-job-title {
+    font-size: 22px;
+  }
+
+  .post-job-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

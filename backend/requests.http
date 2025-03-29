@@ -1,0 +1,128 @@
+post http://localhost:4000/user-api/register
+Content-Type: application/json
+
+{
+    "fullname":"GandhamLokesh",
+   "phonenumber":"Lokesh",
+    "password":"Lokesh",
+    "email":"looll@gmail.com",
+    "role":"student",
+    "skills":{
+        "1":"desgin",
+        "2":"development"
+    },
+    "linkedin":"htpp://ljdfl;ajkfaj.com",
+    "resume":"askks/d/add//dd/ss"
+
+    
+}
+
+###
+post http://localhost:4000/user-api/login
+Content-Type: application/json
+{
+    "email":"looll@gmail.com",
+  "password":"Lokesh"
+
+}
+
+###
+get http://localhost:4000/user-api/user
+{
+    "email":"loki@gmail.com"
+}
+
+### to update the joob seeker details
+put http://localhost:4000/user-api/update-user
+Content-Type: application/json
+
+{
+    "fullname":"GandhamLokesh",
+   "phonenumber":"Lokesh",
+    "password":"Lokesh",
+    "email":"looll@gmail.com",
+    "role":"student",
+    "skills":{
+        "1":"desgin",
+        "2":"development"
+    },
+    "linkedin":"htpp://ljdfl;ajkfaj.com",
+    "resume":"askks/d/add//dd/ss"
+
+    
+}
+
+### to search the jobs
+get http://localhost:4000/recruiter-api/jobs-by-keyword/javascript
+
+### to get the top jobs for trend jobs 
+get http://localhost:4000/recruiter-api/top-jobs
+
+###
+get http://localhost:4000/recruiter-api/alljobs
+
+
+### to get all the jobs for view jobs 
+###get http://localhost:4000/recruiter-api/jobs
+
+###
+post http://localhost:4000/recruiter-api/apply-job
+Content-Type: application/json
+
+{
+  "recruiterEmail": "koper@example.com",
+  "jobTitle": "Frontend Devel oper",
+  "applicantEmail": "applicant@example.com",
+  "applicantName": "applicant",
+  "resumeUrl": "applicant@example.com"
+}
+
+
+
+###
+post http://localhost:4000/recruiter-api/register
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "password": "securepassword123",
+  "company": "Tech Solutions Ltd.",
+  "phone": "+1-123-456-7890",
+  "location": "San Francisco, CA",
+  "industry": "Software Development",
+  "jobs": []
+}
+###
+post http://localhost:4000/recruiter-api/login
+Content-Type: application/json
+
+{
+  "email": "konn@gmail.com",
+  "password": "Lokesh@143"
+}
+
+
+###
+post http://localhost:4000/recruiter-api/post-job
+Content-Type: application/json
+{
+  "email": "koper@example.com",
+  "jobTitle": "Frontend Devel oper",
+  "jobDescription": "We are looking for a skilled frontend developer proficient in React.js and Tailwind CSS.",
+  "salary": "80,000 - 100,000 USD per year",
+  "mode": "Remote",
+  "jobType": "Full-time",
+  "keywords": "React.js, JavaScript, Tailwind CSS, Frontend Development"
+}
+
+###
+put http://localhost:4000/recruiter-api/update-recruiter
+Content-Type: application/json
+{
+  "email":"man1@exmaple.com",
+  "phone":"+91 92992922992"
+}
+
+###
+get http://localhost:4000/recruiter-api/my-jobs/koper@example.com

@@ -6,7 +6,7 @@ const OnTrend = () => {
 
   async function getJobs() {
     try {
-      const res = await fetch("http://localhost:4000/recruiter-api/top-jobs");
+      const res = await fetch("https://jobportal-backend-5sy0.onrender.com/recruiter-api/top-jobs");
       const jobData = await res.json();
 
       if (jobData.status === "success" && Array.isArray(jobData.jobs)) {
@@ -41,7 +41,7 @@ const OnTrend = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:4000/recruiter-api/apply-job", {
+      const response = await fetch("https://jobportal-backend-5sy0.onrender.com/recruiter-api/apply-job", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(applicationData),

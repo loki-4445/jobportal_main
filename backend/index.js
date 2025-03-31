@@ -6,12 +6,15 @@ require("dotenv").config();
 
 const app = express();
 
-// Enable CORS for frontend running on localhost:5173
-app.use(cors({
-  origin: "http://localhost:5173", // Allow requests only from your frontend
-  methods: "GET,POST,PUT,DELETE",
-  allowedHeaders: "Content-Type,Authorization"
-}));
+// Enable CORS for both local and deployed frontend
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://jobportal-frontend-9x47.onrender.com"], // Allow both local and deployed frontend
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
+    credentials: true, // Allow cookies if needed
+  })
+);
 
 // Middleware to parse JSON requests
 app.use(express.json());

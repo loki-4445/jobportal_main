@@ -54,7 +54,7 @@ const JobGiverLogin = ({ setUserType }) => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:4000/recruiter-api/login", {
+      const response = await fetch("https://jobportal-backend-5sy0.onrender.com/recruiter-api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

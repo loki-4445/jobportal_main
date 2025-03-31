@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
-import logo from "../../assets/Logo.png";
+import logo from "../../assets/logo.png";
 import figure from "../../assets/fig.png";
 
 const Signup = () => {

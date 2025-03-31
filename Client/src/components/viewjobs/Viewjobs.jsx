@@ -8,7 +8,7 @@ function ViewJobs() {
 
   async function getJobs() {
     try {
-      const res = await fetch("http://localhost:4000/recruiter-api/alljobs");
+      const res = await fetch("https://jobportal-backend-5sy0.onrender.com/recruiter-api/alljobs");
       const jobData = await res.json();
 
       if (jobData.status === "success" && Array.isArray(jobData.jobs)) {
@@ -28,7 +28,7 @@ function ViewJobs() {
     if (!user) return;
 
     try {
-      const res = await fetch(`http://localhost:4000/recruiter-api/applied-jobs?email=${user.email}`);
+      const res = await fetch(`https://jobportal-backend-5sy0.onrender.com/recruiter-api/applied-jobs?email=${user.email}`);
       const appliedData = await res.json();
 
       if (appliedData.status === "success" && Array.isArray(appliedData.jobs)) {
@@ -66,7 +66,7 @@ function ViewJobs() {
     };
 
     try {
-      const response = await fetch("http://localhost:4000/recruiter-api/apply-job", {
+      const response = await fetch("https://jobportal-backend-5sy0.onrender.com/recruiter-api/apply-job", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(applicationData),

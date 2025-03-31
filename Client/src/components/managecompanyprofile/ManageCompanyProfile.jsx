@@ -28,7 +28,7 @@ const ManageCompanyProfile = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:4000/recruiter-api/update-recruiter", {
+      const response = await fetch("https://jobportal-backend-5sy0.onrender.com/recruiter-api/update-recruiter", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

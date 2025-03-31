@@ -29,7 +29,7 @@ const PostedJob = () => {
 
     const fetchJobs = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/recruiter-api/my-jobs/${userEmail}`);
+        const response = await fetch(`https://jobportal-backend-5sy0.onrender.com/recruiter-api/my-jobs/${userEmail}`);
         const data = await response.json();
         if (response.ok) {
           setJobs(data.jobs);

@@ -7,7 +7,7 @@ import JobGiverRootLayout from "./JobGiverRootLayout";
 import SignUp from "./components/signup/SignUp";
 import OnTrend from "./components/ontrend/OnTrend";
 import Home from "./components/home/Home";
-import ViewJobs from "./components/viewjobs/Viewjobs";
+import ViewJobs from "./components/viewjobs/ViewJobs";
 import Update from "./components/update/Update";
 import VAC from "./components/vac/VAC";
 import AddNewJob from "./components/addnewjob/AddNewJob";

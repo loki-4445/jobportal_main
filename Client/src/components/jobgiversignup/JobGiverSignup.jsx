@@ -50,7 +50,7 @@ const JobGiverSignup = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await fetch("http://localhost:4000/recruiter-api/register", {
+        const response = await fetch("https://jobportal-backend-5sy0.onrender.com/recruiter-api/register", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

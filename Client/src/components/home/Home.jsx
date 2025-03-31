@@ -13,7 +13,7 @@ const Home = () => {
 
   async function fetchJobCount() {
     try {
-      const res = await fetch("http://localhost:4000/recruiter-api/alljobs");
+      const res = await fetch("https://jobportal-backend-5sy0.onrender.com/recruiter-api/alljobs");
       const jobData = await res.json();
       if (jobData.status === "success" && Array.isArray(jobData.jobs)) {
         setLiveJobs(jobData.jobs.length);
@@ -25,7 +25,7 @@ const Home = () => {
 
   async function fetchCompaniesCount() {
     try {
-      const res = await fetch("http://localhost:4000/recruiter-api/recruiters");
+      const res = await fetch("https://jobportal-backend-5sy0.onrender.com/recruiter-api/recruiters");
       const companyData = await res.json();
       if (companyData.status === "success" && Array.isArray(companyData.recruiters)) {
         setTotalCompanies(companyData.recruiters.length);
@@ -37,7 +37,7 @@ const Home = () => {
 
   async function fetchUserCount() {
     try {
-      const res = await fetch("http://localhost:4000/user-api/all-users");
+      const res = await fetch("https://jobportal-backend-5sy0.onrender.com/user-api/all-users");
       const userData = await res.json();
       if (userData.status === "success" && Array.isArray(userData.payload)) {
         setTotalUsers(userData.payload.length);

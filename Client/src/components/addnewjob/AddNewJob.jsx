@@ -39,7 +39,7 @@ const AddNewJob = () => {
     setMessage(null);
 
     try {
-      const response = await fetch("http://localhost:4000/recruiter-api/post-job", {
+      const response = await fetch("https://jobportal-backend-5sy0.onrender.com/recruiter-api/post-job", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

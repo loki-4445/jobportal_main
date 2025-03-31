@@ -82,7 +82,7 @@ const Update = () => {
     if (formData.password) requestBody.password = formData.password;
 
     try {
-      const response = await fetch("http://localhost:4000/user-api/update-user", {
+      const response = await fetch("https://jobportal-backend-5sy0.onrender.com/user-api/update-user", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),

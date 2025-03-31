@@ -1,14 +1,16 @@
-import Header from "./components/header/Header";
+import SeekerHeader from "./components/seekerheader/SeekerHeader";
 import Footer from "./components/footer/Footer";
 import { Outlet } from "react-router-dom";
 
-function RootLayout({ isLoggedIn, setIsLoggedIn, userType }) {
+function JobSeekerRootLayout({setUserType,userType}) {
   return (
     <div className="root-layout-container" style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
-      <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} userType={userType} />
+      <SeekerHeader setUserType={setUserType} userType={userType}/>
       
       <main style={{ flex: 1 }}>
-        <Outlet />
+      <div style={{ marginBottom: "40px" }}>
+          <Outlet />
+        </div>
       </main>
 
       <Footer />
@@ -16,4 +18,4 @@ function RootLayout({ isLoggedIn, setIsLoggedIn, userType }) {
   );
 }
 
-export default RootLayout;
+export default JobSeekerRootLayout;

@@ -95,14 +95,11 @@ const Update = () => {
       console.error("Error updating profile:", error);
     }
   };
-  function handleBack(){
-    navigate('/home')
-  }
+
 
   return (
     <div className="container">
       <nav className="navbar">
-        <button onClick={handleBack}>Back</button>
         <div className="logo">
           <img src={logo} alt="JobPortal Logo" />
           JobPortal

@@ -17,7 +17,7 @@ const Signup = () => {
     resume: null,
   });
   const [errors, setErrors] = useState({});
-
+  sessionStorage.clear()
   // Validation Logic
   const validateForm = () => {
     let newErrors = {};

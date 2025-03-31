@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
-import questionImage from '../../assets/landing-image .png'; // adjust path based on your folder
+import questionImage from '../../assets/landing-image.png'; // Ensure correct path
 
 const LandingPage = ({ setUserType }) => {
   const navigate = useNavigate();
+  const [userType, setUserTypeState] = useState(() => sessionStorage.getItem("userType") || null);
+
+  useEffect(() => {
+    if (userType === 'jobSeeker') {
+      navigate('/login');  // Navigate to Job Seeker login
+    } else if (userType === 'jobGiver') {
+      navigate('/job-giver/login');  // Navigate to Job Giver login
+    }
+  }, [userType, navigate]);
 
   const handleJobSeekerClick = () => {
-    setUserType("jobSeeker");
-    navigate('/login'); // Navigate to Job Seeker login page
+    sessionStorage.setItem('userType', 'jobSeeker');
+    setUserType('jobSeeker');
+    setUserTypeState('jobSeeker');
   };
 
   const handleJobGiverClick = () => {
-    setUserType("jobGiver");
-    navigate('/job-giver/signup'); // Navigate to Job Giver Signup page instead of login
+    sessionStorage.setItem('userType', 'jobGiver');
+    setUserType('jobGiver');
+    setUserTypeState('jobGiver');
   };
 
   return (

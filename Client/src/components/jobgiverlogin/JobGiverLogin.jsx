@@ -1,21 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./JobGiverLogin.css";
 import logo from "../../assets/logo.png";
 import figure from "../../assets/image.png";
 
-const JobGiverLogin = ({ setIsLoggedIn }) => {
+const JobGiverLogin = ({ setUserType }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState("");
   const [loading, setLoading] = useState(false);
+  // const [login,setLogin]=useEffect("");
+
+  // useEffect(() => {
+  //   if (login) {
+  //     navigate("/postedjob");
+  //   }
+  // }, [navigate]);
 
   const validateForm = () => {
     let newErrors = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@\d-$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
@@ -56,13 +63,10 @@ const JobGiverLogin = ({ setIsLoggedIn }) => {
       const data = await response.json();
 
       if (data && data.status === "success") {
-        // Store in sessionStorage instead of sessionStorage
-        sessionStorage.setItem("token", data.token);
         sessionStorage.setItem("recruiter", JSON.stringify(data.recruiter));
         sessionStorage.setItem("userType", "jobGiver");
         sessionStorage.setItem("isLoggedIn", "true");
-
-        setIsLoggedIn(true);
+        setUserType("jobGiver");
         navigate("/postedjob");
       } else {
         setServerError(data?.message || "Invalid credentials, please try again.");
@@ -75,14 +79,11 @@ const JobGiverLogin = ({ setIsLoggedIn }) => {
     }
   };
 
-  function handleBack() {
-    navigate("/");
-  }
+
 
   return (
     <div className="container">
       <nav className="navbar">
-        <button onClick={handleBack}>Back</button>
         <div className="logo">
           <img src={logo} alt="JobPortal Logo" />
           JobPortal

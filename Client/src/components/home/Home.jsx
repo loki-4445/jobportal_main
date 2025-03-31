@@ -1,137 +1,146 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
-import { FaSearch } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import lokeshPic from "../../assets/lokesh.jpg";
+import sivaniPic from "../../assets/sivani.png";
+import mrudulaPic from "../../assets/mrudula.jpg";
+import subhashPic from "../../assets/subhash.jpg";
 
 const Home = () => {
+  const [liveJobs, setLiveJobs] = useState(0);
+  const [totalCompanies, setTotalCompanies] = useState(0);
+  const [totalUsers, setTotalUsers] = useState(0);
+
+  async function fetchJobCount() {
+    try {
+      const res = await fetch("http://localhost:4000/recruiter-api/alljobs");
+      const jobData = await res.json();
+      if (jobData.status === "success" && Array.isArray(jobData.jobs)) {
+        setLiveJobs(jobData.jobs.length);
+      }
+    } catch (error) {
+      console.error("Error fetching jobs:", error);
+    }
+  }
+
+  async function fetchCompaniesCount() {
+    try {
+      const res = await fetch("http://localhost:4000/recruiter-api/recruiters");
+      const companyData = await res.json();
+      if (companyData.status === "success" && Array.isArray(companyData.recruiters)) {
+        setTotalCompanies(companyData.recruiters.length);
+      }
+    } catch (error) {
+      console.error("Error fetching companies:", error);
+    }
+  }
+
+  async function fetchUserCount() {
+    try {
+      const res = await fetch("http://localhost:4000/user-api/all-users");
+      const userData = await res.json();
+      if (userData.status === "success" && Array.isArray(userData.payload)) {
+        setTotalUsers(userData.payload.length);
+      }
+    } catch (error) {
+      console.error("Error fetching users:", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchJobCount();
+    fetchCompaniesCount();
+    fetchUserCount();
+  }, []);
+
+  const developers = [
+    {
+      name: "Lokesh Gandham",
+      rollNo: "22501A0547",
+      email: "gandhamlokesh5@gmail.com",
+      github: "https://github.com/loki-4445",
+      linkedin: "https://www.linkedin.com/in/lokeshgandham/",
+      image: lokeshPic,
+    },
+    {
+      name: "Sivani Marepalli",
+      rollNo: "23505A0506",
+      email: "sivanimarepalli@gmail.com",
+      github: "https://github.com/sivanimarepalli",
+      linkedin: "https://www.linkedin.com/in/sivani-marepalli-96b1a228a/",
+      image: sivaniPic,
+    },
+    {
+      name: "Mrudula Adapala",
+      rollNo: "23505A0501",
+      email: "mrudulaadapala3@gmail.com",
+      github: "https://github.com/MrudulaAdapala25",
+      linkedin: "https://www.linkedin.com/in/mrudula-adapala-297466295/",
+      image: mrudulaPic,
+    },
+    {
+      name: "L Subhash Garika",
+      rollNo: "22501A0550",
+      email: "garikasubhash@gmail.com",
+      github: "https://github.com/Pencilsubhash",
+      linkedin: "https://www.linkedin.com/in/garika-subhash-417583288/",
+      image: subhashPic,
+    },
+  ];
 
   return (
     <div>
       <div className="relative">
         <img
           src="https://storage.googleapis.com/a1aa/image/Ui2U-u0CJq6Awp00apsVFseYAWPAfiWcSJmlrnmKohE.jpg"
-          alt="Background image of a keyboard and a hand on a laptop"
+          alt="Background"
           className="background-image"
         />
         <div className="overlay">
           <h1 className="title">
             Find Nearby Jobs <span className="highlight">Sales Marketing</span>
           </h1>
-          <p className="subtitle">
-            It is a Long Established Fact That a Reader Will be Distracted by The Readable.
-          </p>
-         
-          {/* Stats Section on the Image */}
-          <div className="stats">
-            <div className="stat">
-              <i className="fas fa-briefcase stat-icon"></i>
-              <h2 className="stat-number">18,955</h2>
-              <p className="stat-text">Live Jobs Posted</p>
-            </div>
-            <div className="stat">
-              <i className="fas fa-file-alt stat-icon"></i>
-              <h2 className="stat-number">11,088</h2>
-              <p className="stat-text">Jobs Candidate</p>
-            </div>
-            <div className="stat">
-              <i className="fas fa-building stat-icon"></i>
-              <h2 className="stat-number">10,758</h2>
-              <p className="stat-text">Companies Jobs</p>
-            </div>
-          </div>
-
-          <div className="trending-keywords">
-            <span className="trending-title">Trending Jobs Keywords:</span>
-            <span className="keyword">Web Designer</span>
-            <span className="keyword">Web Developer</span>
-            <span className="keyword">Graphic Designer</span>
-            <span className="keyword">PHP Developer</span>
-            <span className="keyword">IOS Developer</span>
-            <span className="keyword">Android Developer</span>
-          </div>
+          <p className="subtitle">It is a Long Established Fact That a Reader Will be Distracted by The Readable.</p>
         </div>
       </div>
 
-      {/* Candidate Testimonial Section */}
-      <div className="home-container">
-        <h2 className="section-title">What Our Candidates Say</h2>
-        <p className="section-subtitle">
-          Discover the voices of success! Our candidates speak for themselves about their transformative experiences.
-        </p>
-        <div className="testimonial-section">
-          <div className="testimonial-images">
-            <img
-              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600"
-              alt="Candidate 1"
-              className="testimonial-img img1"
-            />
-            <img
-              src="https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?w=600"
-              alt="Candidate 2"
-              className="testimonial-img img2"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=600"
-              alt="Candidate 3"
-              className="testimonial-img img3"
-            />
-            <div className="quote-badge">
-              <span className="quote-icon">❝❞</span>
-              <p>25k Satisfied Clients</p>
+      <h2 className="developers-heading">Meet Our Developers</h2>
+      <div className="profile-card-container">
+        {developers.map((dev, index) => (
+          <div key={index} className="profile-card">
+            <img src={dev.image} alt={dev.name} className="profile-pic" />
+            <h3>{dev.name}</h3>
+            <p className="roll-number">{dev.rollNo}</p>
+            <div className="profile-icons">
+              <a href={`mailto:${dev.email}`} className="icon"><FaEnvelope /></a>
+              <a href={dev.github} target="_blank" rel="noopener noreferrer" className="icon"><FaGithub /></a>
+              <a href={dev.linkedin} target="_blank" rel="noopener noreferrer" className="icon"><FaLinkedin /></a>
             </div>
           </div>
-          <div className="testimonial-content">
-            <div className="testimonial-box">
-              <p className="testimonial-text">
-                Discovering this job portal has revolutionized my job search. Its user-friendly design and intuitive
-                interface make navigating the platform a breeze.
-              </p>
-            </div>
-            <div className="author-info">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQninzrUW3_CR9AjiFip05FsSp24Zp1ENqy7w&s"
-                alt="User "
-                className="author-img"
-              />
-              <div>
-                <h4 className="author-name">Jonathon Smith</h4>
-                <p className="author-role">Web Developer</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
+      </div>
 
-        {/* Success & Award Section */}
-        <div className="success-award-section">
-          <button className="award-btn">Success Business Award</button>
-          <br />
-          <h2 className="success-title">
-            <span>Our Success & Award</span>
-          </h2>
-          <p className="success-description">
-            Lorem Ipsum is simply dummy text printing and type setting industry.
-          </p>
-          <div className="stats-container">
-            <div className="stat-box">
-              <div className="stat-icon">📁</div>
-              <h3>12,376</h3>
-              <p>Live Jobs</p>
-            </div>
-            <div className="stat-box">
-              <div className="stat-icon">👤</div>
-              <h3>89,562</h3>
-              <p>Jobs Candidate</p>
-            </div>
-            <div className="stat-box">
-              <div className="stat-icon">💬</div>
-              <h3>28,166</h3>
-              <p>Active Resume</p>
-            </div>
-            <div className="stat-box">
-              <div className="stat-icon">🏢</div>
-              <h3>8,966</h3>
-              <p>Companies</p>
-            </div>
-          </div>
+      <h2 className="stats-heading">Platform Statistics</h2>
+      <div className="stats-container">
+        <div className="stat-box">
+          <div className="stat-icon">📁</div>
+          <h3>{liveJobs}</h3>
+          <p>Live Jobs</p>
+        </div>
+        <div className="stat-box">
+          <div className="stat-icon">👤</div>
+          <h3>{totalUsers}</h3>
+          <p>Job Candidates</p>
+        </div>
+        <div className="stat-box">
+          <div className="stat-icon">💬</div>
+          <h3>{totalUsers}</h3>
+          <p>Active Resume</p>
+        </div>
+        <div className="stat-box">
+          <div className="stat-icon">🏢</div>
+          <h3>{totalCompanies}</h3>
+          <p>Companies</p>
         </div>
       </div>
     </div>

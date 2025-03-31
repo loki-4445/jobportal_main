@@ -4,16 +4,19 @@ import "./Login.css";
 import logo from "../../assets/logo.png";
 import figure from "../../assets/figure.png";
 
-const Login = ({ setIsLoggedIn, setUserType }) => {
+const Login = ({ setUserType,userType }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
   const [invalid, setInvalid] = useState("");
 
-  useEffect(() => {
-    sessionStorage.setItem("isLoggedIn", "false");
-    sessionStorage.removeItem("data"); // Remove user data
-  }, []);
+  // Redirect if already logged in
+  // useEffect(() => {
+  //   const userType = sessionStorage.getItem("userType");
+  //   if (userType === "jobSeeker") {
+  //     navigate("/home", { replace: true });
+  //   }
+  // }, [navigate]);
 
   const validateForm = () => {
     let newErrors = {};
@@ -40,19 +43,12 @@ const Login = ({ setIsLoggedIn, setUserType }) => {
         const data = await response.json();
 
         if (data.status === "success") {
-          console.log("Login Successful:", data);
           sessionStorage.setItem("data", JSON.stringify(data.user));
-          sessionStorage.setItem("isLoggedIn", "true");
+          setUserType("jobSeeker");
           sessionStorage.setItem("userType", "jobSeeker");
-          
-          console.log("Stored isLoggedIn:", sessionStorage.getItem("isLoggedIn"));
-          console.log("Stored userType:", sessionStorage.getItem("userType"));
-
-          setIsLoggedIn(true);
           navigate("/home");
         } else {
           setInvalid(data.message);
-          setIsLoggedIn(false);
         }
       } catch (error) {
         console.error("Error logging in:", error);
@@ -61,14 +57,14 @@ const Login = ({ setIsLoggedIn, setUserType }) => {
     }
   };
 
-  const handleBack = () => {
-    navigate('/');
-  };
-
+  
+  useEffect(() => {
+    console.log("Received userType in Login:", userType);
+  }, [userType]);
+  
   return (
     <div className="container">
       <nav className="navbar">
-        <button onClick={handleBack}>Back</button>
         <div className="logo">
           <img src={logo} alt="JobPortal Logo" />
           JobPortal

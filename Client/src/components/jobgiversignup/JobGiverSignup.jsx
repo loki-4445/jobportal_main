@@ -18,7 +18,7 @@ const JobGiverSignup = () => {
   });
 
   const [errors, setErrors] = useState({});
-
+  
   const validateForm = () => {
     let newErrors = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

@@ -459,6 +459,19 @@ recruiterApp.get("/alljobs", async (req, res) => {
     res.send({ message: "Internal server error", status: "failed" });
   }
 });
+// Get All Recruiters
+recruiterApp.get("/recruiters", async (req, res) => {
+  try {
+    const recruitersCollection = req.app.get("recruitersCollection");
+    const recruiters = await recruitersCollection.find({}).toArray();
+
+    res.send({ recruiters, status: "success" });
+
+  } catch (err) {
+    console.error("Error fetching recruiters:", err);
+    res.send({ message: "Internal server error", status: "failed" });
+  }
+});
 
 
 

@@ -193,5 +193,24 @@ userApp.put("/update-user", async (req, res) => {
     res.send({ message: "Internal server error", status: "failed" });
   }
 });
+// Get All Users
+userApp.get("/all-users", async (req, res) => {
+  try {
+    const usersCollection = req.app.get("userCollection");
+    
+    // Fetch all users from the database
+    const users = await usersCollection.find({}).toArray();
+
+    if (!users.length) {
+      return res.send({ message: "No users found", status: "failed" });
+    }
+
+    res.send({ status: "success", payload: users, message: "Users retrieved successfully" });
+  } catch (err) {
+    console.error("Error retrieving users:", err);
+    res.send({ message: "Internal server error", status: "failed" });
+  }
+});
+
 
 module.exports = userApp;

@@ -7,9 +7,13 @@ const VAC = () => {
   const backendURL = "http://localhost:4000"; // Backend URL
 
   useEffect(() => {
-    const recruiterEmail = sessionStorage.getItem('recruiter').email;
-
-    fetch(`${backendURL}/recruiter-api/my-jobs/${recruiterEmail}`)
+    const recruiterData = sessionStorage.getItem("recruiter");
+    console.log(recruiterData); // Check if the value exists and is a string
+    
+    if (recruiterData) {
+        const recruiter = JSON.parse(recruiterData); // Convert string to object
+        console.log(recruiter.email);
+        fetch(`${backendURL}/recruiter-api/my-jobs/${recruiter.email}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.status === "success" && Array.isArray(data.jobs)) {
@@ -21,7 +25,13 @@ const VAC = () => {
       })
       .catch((error) => {
         console.error("Error fetching jobs:", error);
-      });
+      }); // Should now work correctly
+    } else {
+        console.log("No recruiter data found in sessionStorage.");
+    }
+    
+    
+    
   }, []);
 
   return (

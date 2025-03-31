@@ -4,7 +4,7 @@ import "./VAC.css";
 const VAC = () => {
   const jobsRef = useRef([]);
   const [forceRender, setForceRender] = useState(0);
-  const backendURL = "http://localhost:4000"; // Backend URL
+  const backendURL = "https://jobportal-backend-5sy0.onrender.com"; // Backend URL
 
   useEffect(() => {
     const recruiterData = sessionStorage.getItem("recruiter");

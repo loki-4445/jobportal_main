@@ -76,7 +76,7 @@ const Signup = () => {
       formDataToSend.append("resume", formData.resume);
   
       try {
-        const response = await fetch("http://localhost:4000/user-api/register", {
+        const response = await fetch("https://jobportal-backend-5sy0.onrender.com/user-api/register", {
           method: "POST",
           body: formDataToSend,
         });
